@@ -21,8 +21,8 @@ public class ListaClientes {
 		Modalidade corridaIndoor = new Modalidade("Corrida Indoor", "Passadeira");
 		ProgramaTreino musculacaoIntermediario1 = new ProgramaTreino("Treino Hipertrofia 2", 60, musculacao);
 		ProgramaTreino musculacaoAvançado3 = new ProgramaTreino("Corrida Indoor 2", 60, corridaIndoor);
-		Cliente pedro = new Cliente(000003, "Pedro Duarte", "Intermediário", musculacao, musculacaoIntermediario1);
-		Cliente victor = new Cliente(000004, "Victor Duarte", "Avançado", corridaIndoor,	musculacaoAvançado3);
+		Cliente pedro = new Cliente("000003", "Pedro Duarte", "Intermediário", musculacao, musculacaoIntermediario1);
+		Cliente victor = new Cliente("000004", "Victor Duarte", "Avançado", corridaIndoor,	musculacaoAvançado3);
 		
 		EntityManager em = JpaUtil.getEntityManager();
 		ModalidadeDao md = new ModalidadeDao(em);

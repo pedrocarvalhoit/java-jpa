@@ -14,8 +14,11 @@ import br.com.academia.modelo.ProgramaTreino;
 import br.com.academia.util.JpaUtil;
 
 public class CadastroCliente {
-	/** Adicionar numero de sócio */
-	/** Criar métodos busca */
+	/** Criar GINASIO -> treinadores modalidades clientes
+	 * 			TREINADORES -> Clientes e modalidade*/
+	/** Criar métodos buscas */
+	/** Criar classe Treino para relacionamento bi direcional com programa trieno
+	 * Exemplo: PrograT - Musculacao iniciante <-> Treino M.iniciante 1 e 2...*/
 	public static void main(String[] args) {
 		// Cadastrando modalidades programas e clientes
 		Modalidade musculacao = new Modalidade("Musculação", "Ginásio");
@@ -24,8 +27,8 @@ public class CadastroCliente {
 		ProgramaTreino musculacaoIntermediario1 = new ProgramaTreino("Treino Hipertrofia 2", 60, musculacao);
 		ProgramaTreino corridaIndoorIniciate2 = new ProgramaTreino("Corrida Indoor 2", 60, corridaIndoor);
 
-		Cliente pedro = new Cliente(000001, "Pedro Duarte", "Intermediário", musculacao, musculacaoIntermediario1);
-		Cliente thamires = new Cliente(000002, "Thamires Guimaraes", "Iniciante", corridaIndoor,	corridaIndoorIniciate2);
+		Cliente pedro = new Cliente("000001", "Pedro Duarte", "Intermediário", musculacao, musculacaoIntermediario1);
+		Cliente thamires = new Cliente("000002", "Thamires Guimaraes", "Iniciante", corridaIndoor,	corridaIndoorIniciate2);
 
 		EntityManager em = JpaUtil.getEntityManager();
 

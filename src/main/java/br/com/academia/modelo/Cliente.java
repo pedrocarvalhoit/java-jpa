@@ -15,7 +15,9 @@ import javax.persistence.Table;
 public class Cliente {
 
 	@Id
-	private long cpf;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String cpf;
 	private String nome;
 //	private int idade = nascimento.until(LocalDate.now()).getYears();
 	private String nivelDeAtividade;
@@ -28,7 +30,7 @@ public class Cliente {
 
 	}
 
-	public Cliente(long cpf, String nome, String nivelDeAtividade, Modalidade modalidade, ProgramaTreino programa) {
+	public Cliente(String cpf, String nome, String nivelDeAtividade, Modalidade modalidade, ProgramaTreino programa) {
 		this.cpf = cpf;
 		this.nome = nome;
 		this.modalidade = modalidade;
@@ -36,8 +38,8 @@ public class Cliente {
 		this.programa = programa;
 	}
 
-	public long getId() {
-		return cpf;
+	public Long getId() {
+		return id;
 	}
 
 	public String getNome() {
@@ -52,7 +54,7 @@ public class Cliente {
 		return nivelDeAtividade;
 	}
 
-	public long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
