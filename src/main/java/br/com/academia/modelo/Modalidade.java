@@ -36,6 +36,11 @@ public class Modalidade {
 	public String getLocal() {
 		return local;
 	}
+
+	@Override
+	public String toString() {
+		return " " + nome;
+	}
 	
 	
 	

@@ -1,5 +1,7 @@
 package br.com.academia.teste;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import br.com.academia.dao.RecepcaoDao;
@@ -11,12 +13,8 @@ import br.com.academia.modelo.Modalidade;
 import br.com.academia.modelo.ProgramaTreino;
 import br.com.academia.util.JpaUtil;
 
-public class CadastroCliente {
-	/** Criar GINASIO -> treinadores ambientes clientes AMBIENTE -> Modalidades
-	 * TREINADORES -> Clientes e modalidade
-	 * CRIAR NUMERO TOTAL DE SÓCIOS*/
-	/** Criar classe Treino para relacionamento bi direcional com programa treino
-	 * Exemplo: PrograT - Musculacao iniciante <-> Treino M.iniciante 1 e 2... */
+public class PerfomanceConsultas {
+
 	public static void main(String[] args) {
 		// Cadastrando modalidades programas e clientes
 		Modalidade musculacao = new Modalidade("Musculação", "Ginásio");
@@ -45,12 +43,15 @@ public class CadastroCliente {
 
 		clienteDAO.cadastrar(pedro);
 		clienteDAO.cadastrar(thamires);
-
-		em.getTransaction().commit();
 		
-		RecepcaoDao busca = new RecepcaoDao(em);
-		System.out.println(busca.buscaFichaClientePorCpf("000001"));
-
+		RecepcaoDao recepcao = new RecepcaoDao(em);
+		List<Cliente> listaClientes = recepcao.buscarListaDeClientes();
+		listaClientes.forEach(c -> System.out.println(c));
+		
+		recepcao.buscarPorParametros("Pedro Duarte", null, null);
+		
+		
+		
 		em.close();
 
 	}
