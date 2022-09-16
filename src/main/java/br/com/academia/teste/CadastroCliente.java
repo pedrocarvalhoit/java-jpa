@@ -12,6 +12,7 @@ import br.com.academia.modelo.ProgramaTreino;
 import br.com.academia.util.JpaUtil;
 
 public class CadastroCliente {
+	//IDEIAS PARA IMPLEMENTAR NO PROJETO DE SPRING.
 	/** Criar GINASIO -> treinadores ambientes clientes AMBIENTE -> Modalidades
 	 * TREINADORES -> Clientes e modalidade
 	 * CRIAR NUMERO TOTAL DE SÓCIOS*/
